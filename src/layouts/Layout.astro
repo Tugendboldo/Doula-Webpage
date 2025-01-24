@@ -1,0 +1,42 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Sophie - Doula, Yogalehrerin und Energetikerin in Burgenland, Wien und Niederösterreich" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: #d4a373;
+		--accent-light: #fefae0;
+		--accent-dark: #957856;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #faedcd;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		min-height: 100vh;
+	}
+	* {
+		box-sizing: border-box;
+	}
+</style>
